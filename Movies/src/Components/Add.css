@@ -1,0 +1,132 @@
+/* ===== Add Content Section ===== */
+/* ===== Body & Page Background ===== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #7c3aed);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  min-height: 100vh;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ===== Gradient Animation ===== */
+@keyframes gradientAnimation {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* ===== Area under Header / Main Container ===== */
+.main-content {
+  padding: 20px;
+  margin-top: 80px; /* Leave space for sticky header */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  background: rgba(30, 42, 60, 0.7); /* semi-transparent glass effect */
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+}
+
+/* Optional: Animate main content slightly on hover */
+.main-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+
+.add-content {
+  padding: 50px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: rgba(30, 42, 60, 0.8); /* Glassy card effect */
+  backdrop-filter: blur(15px) saturate(180%);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+/* ===== Input Container ===== */
+.add-content .input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.add-content .input-container input {
+  width: 100%;
+  background-color: rgba(255,255,255,0.05);
+  padding: 15px 20px;
+  border-radius: 10px;
+  border: 2px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 1.25rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.add-content .input-container input::placeholder {
+  color: #aaa;
+  transition: color 0.3s ease;
+}
+
+.add-content .input-container input:focus {
+  border-color: #7c3aed;
+  background-color: rgba(255,255,255,0.1);
+  box-shadow: 0 0 10px #7c3aed, 0 0 20px rgba(124, 58, 237, 0.3);
+  color: #fff;
+}
+
+/* ===== Results Section ===== */
+.results {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.results li {
+  padding: 12px 15px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results li:hover {
+  background: rgba(124, 58, 237, 0.8);
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(124, 58, 237, 0.4);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .add-content {
+    padding: 30px 15px;
+  }
+
+  .add-content .input-container input {
+    font-size: 1.1rem;
+  }
+
+  .results li {
+    font-size: 1rem;
+  }
+}

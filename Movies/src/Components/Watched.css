@@ -1,0 +1,143 @@
+/* ===== Page Background ===== */
+.movie-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ===== Container ===== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== Header ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* Title */
+.heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Count Badge */
+.count-pill {
+  background: #e50914;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.7);
+}
+
+/* ===== Grid ===== */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* ===== Movie Card ===== */
+.movie-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #111;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.movie-card:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* Poster */
+.poster-wrapper {
+  position: relative;
+  height: 320px;
+}
+
+.poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Gradient Overlay */
+.poster-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+/* ===== Controls (Buttons on Image) ===== */
+.inner-card-controls {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+/* Show on hover */
+.movie-card:hover .inner-card-controls {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Buttons */
+.ctrl-btn {
+  background: rgba(0, 0, 0, 0.7);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover buttons */
+.ctrl-btn:hover {
+  background: #e50914;
+  transform: scale(1.2);
+}
+
+/* ===== Movie Info ===== */
+.info {
+  padding: 10px;
+}
+
+/* Title */
+.title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Year */
+.release-date {
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* ===== Empty State ===== */
+.no-movies {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-top: 60px;
+  color: #888;
+}

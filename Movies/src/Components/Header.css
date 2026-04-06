@@ -1,0 +1,136 @@
+/* ===== Legendary Header Style ===== */
+.header {
+  background: linear-gradient(135deg, #1e3a8a, #7c3aed);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* Glass + Blur effect 🔥 */
+  backdrop-filter: blur(15px) saturate(180%);
+  box-shadow: 0 4px 25px rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.4s ease, transform 0.3s ease;
+}
+
+/* On scroll lift animation */
+.header.scrolled {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+
+/* ===== Container Flex ===== */
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ===== Logo ===== */
+.header .logo a {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 2px;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.header .logo a:hover {
+  transform: scale(1.2) rotate(-2deg);
+  color: #fbbf24;
+  text-shadow: 0 0 10px #fbbf24, 0 0 20px rgba(251,191,36,0.5);
+}
+
+/* ===== Nav Links ===== */
+.header .nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: gap 0.3s ease;
+}
+
+.header .nav-links li a {
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Animated underline 🔥 */
+.header .nav-links li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #fbbf24;
+  transition: width 0.4s ease;
+}
+
+.header .nav-links li a:hover::after {
+  width: 100%;
+}
+
+/* Hover text glow */
+.header .nav-links li a:hover {
+  color: #fbbf24;
+  transform: scale(1.05);
+  text-shadow: 0 0 5px #fbbf24, 0 0 10px rgba(251,191,36,0.5);
+}
+
+/* ===== Button ===== */
+.header .btn {
+  background: linear-gradient(135deg, #f59e0b, #fbbf24);
+  padding: 8px 18px;
+  border-radius: 30px;
+  color: black !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.header .btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.15);
+  transition: all 0.4s ease;
+}
+
+.header .btn:hover::after {
+  width: 100%;
+}
+
+.header .btn:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .header .nav-links {
+    gap: 15px;
+  }
+
+  .header .nav-links li a {
+    font-size: 0.95rem;
+  }
+
+  .header .btn {
+    padding: 6px 14px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,185 @@
+/* ==========================
+   Movie Card Legendary Style
+========================== */
+.movie-card {
+  background: linear-gradient(145deg, #1e1e2f, #0d0d1f);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s ease,
+              background 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin: 15px;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.9);
+  background: linear-gradient(145deg, #252535, #1c1c2a);
+}
+
+/* ==========================
+   Poster Image with animation
+========================== */
+.movie-card .poster-wrapper {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-bottom: 1px solid #333;
+  position: relative;
+}
+
+.movie-card .poster-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.6s ease;
+}
+
+.movie-card:hover .poster-wrapper img {
+  transform: scale(1.1) rotate(1deg);
+  filter: brightness(1.2) contrast(1.1);
+}
+
+/* ==========================
+   Info Section
+========================== */
+.movie-card .info {
+  padding: 12px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.movie-card .info .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-card .info .title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.movie-card .info .title:hover {
+  color: #ff3d00;
+  transform: scale(1.05);
+  text-shadow: 0 0 8px #ff3d00, 0 0 15px rgba(255,61,0,0.5);
+  text-decoration: underline;
+}
+
+.movie-card .info .release-date {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #aaa;
+}
+
+/* ==========================
+   Controls Buttons
+========================== */
+.movie-card .inner-card-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.movie-card .ctrl-btn {
+  background-color: #27293d;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card .ctrl-btn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255,255,255,0.1);
+  transition: all 0.4s ease;
+}
+
+.movie-card .ctrl-btn:hover::after {
+  width: 100%;
+}
+
+.movie-card .ctrl-btn i {
+  font-size: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.movie-card .ctrl-btn:hover i {
+  transform: rotate(20deg) scale(1.2);
+  color: #ff3d00;
+}
+
+.movie-card .ctrl-btn:hover {
+  background-color: #1e40af;
+  color: #fff;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+}
+
+/* ==========================
+   Grid layout
+========================== */
+.movie-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+}
+
+/* ==========================
+   Placeholder for missing posters
+========================== */
+.filter-poster {
+  width: 100%;
+  height: 320px;
+  background-color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bbb;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.filter-poster:hover {
+  background-color: #555;
+}
+
+/* ==========================
+   Mobile Responsive
+========================== */
+@media (max-width: 640px) {
+  .movie-card {
+    width: 90%;
+  }
+
+  .movie-card .poster-wrapper {
+    height: 250px;
+  }
+
+  .inner-card-controls {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
